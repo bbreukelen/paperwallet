@@ -1,0 +1,18 @@
+Crypto Coin Paper wallet generator
+
+This javascript-based paper wallet generator allows you to print handy paper wallets.
+It does NOT generate addresses and keys for you but simply allows you to make a nicely formatted wallet using the pre-generated information.
+
+How to use
+1) Open the paper wallet generator on paperwaller.futuresoftware.nl or locally
+2) Disconnect your computer from the internet
+3) Enter the name of the cryptocoin in the top-left field
+4) Enter the public information in the left side.
+   You can enter 1 or 2 public strings and specify the name of that key.
+   Usually the title will be "Address" and you can enter the public address in the field below.
+   A QR-code is auto-created.
+5) Enter the private information on the right side.
+    Enter the type of key name like: "Private Key" and the actual key below that.
+    You can enter 3 different keys/secrets/etc.
+6) Click the print link at the top-left to auto-remove unused fields.
+

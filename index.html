@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Paper Wallet Generator</title>
+<meta charset="utf-8">
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<style>
+body { margin: 1cm; padding: 0; font-family: Calibri; color: black; -webkit-print-color-adjust:exact; }
+div.a4 { min-height: 16.5cm;  width: 25.5cm; overflow: hidden; background-image: url(cryptobg.png); }
+div.public { position:relative; width: 8cm;  float: left; }
+div.middle { position:relative; width: 9cm; float: left; min-height: 16.5cm; background: white; }
+div.private { position:relative; width: 8.5cm; float: left; }
+div.block { padding: 10px; }
+div.middle div.block { background-image: url(watermark.png); width: calc(100% - 1.5cm); height: 100%; position: absolute; left: 1cm; }
+
+input, textarea {
+    border: 0;
+    background: #eeeeee;
+    border-radius: 5px;
+    padding: 3px;
+    outline: 0;
+    font-family: Calibri;
+    font-size: 10pt;
+    margin-bottom: 2px;
+    width: 97%;
+    height: 1em;
+    resize: none;
+    overflow:hidden;
+}
+input { font-weight: bold; margin-bottom: -1px; background: none; }
+#coinTitle { font-size: 16pt; padding: 10px 0 0 10px; }
+div.qr { display: inline-block; background: #ffffff; }
+#printBut { position: absolute; top: 16px; left: 39px; cursor: pointer; text-decoration: underline; }
+</style>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="qrcode.min.js"></script>
+<script type="text/javascript" src="paper.js"></script>
+</head>
+<body>
+<div class="a4">
+    <div class="public">
+        <input spellcheck="false" type="text" id="coinTitle" placeholder="Coin name"/>
+
+        <div class="block">
+            <input spellcheck="false" type="text" id="publicName1" placeholder="type of address"/><br/>
+            <textarea spellcheck="false" id="publicValue1" placeholder="address"></textarea><br/>
+            <div class="qr" value="" name="publicValue1"></div>
+        </div>
+
+        <div class="block">
+            <input spellcheck="false" type="text" id="publicName2" placeholder="type of address"/><br/>
+            <textarea spellcheck="false" id="publicValue2" placeholder="address"></textarea><br/>
+            <div class="qr" value="" name="publicValue2"></div>
+        </div>
+    </div>
+
+    <div class="middle">
+        <div class="block">&nbsp;</div>
+    </div>
+
+    <div class="private">
+        <div class="block">
+            <input spellcheck="false" type="text" id="privateName1" placeholder="type of key/secret"/><br/>
+            <textarea spellcheck="false" id="privateValue1" placeholder="key/secret"></textarea><br/>
+            <div class="qr" value="" name="privateValue1"></div>
+        </div>
+
+        <div class="block">
+            <input spellcheck="false" type="text" id="privateName2" placeholder="type of key/secret"/><br/>
+            <textarea spellcheck="false" id="privateValue2" placeholder="key/secret"></textarea><br/>
+            <div class="qr" value="" name="privateValue2"></div>
+        </div>
+
+        <div class="block">
+            <input spellcheck="false" type="text" id="privateName3" placeholder="type of key/secret"/><br/>
+            <textarea spellcheck="false" id="privateValue3" placeholder="key/secret"></textarea><br/>
+            <div class="qr" value="" name="privateValue3"></div>
+        </div>
+    </div>
+</div>
+<div id="printBut">Print</div>
+</body>
+</html>
