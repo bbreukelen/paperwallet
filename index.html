@@ -31,6 +31,12 @@ input { font-weight: bold; margin-bottom: -1px; background: none; }
 #coinTitle { font-size: 16pt; padding: 10px 0 0 10px; }
 div.qr { display: inline-block; background: #ffffff; }
 #printBut { position: absolute; top: 16px; left: 39px; cursor: pointer; text-decoration: underline; }
+div.footer { position: absolute; top: 660px; left: 39px; }
+div.help {
+    position: absolute; top: 123px; left: 130px; width: 730px; height: 410px; padding: 20px; background: #e6ffe6;
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.4); -moz-box-shadow: 10px 10px 20px rgba(0,0,0,0.4); -webkit-box-shadow: 10px 10px 20px rgba(0,0,0,0.4);
+}
+a { color: black; }
 </style>
 <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="qrcode.min.js"></script>
@@ -78,6 +84,29 @@ div.qr { display: inline-block; background: #ffffff; }
         </div>
     </div>
 </div>
-<div id="printBut">Print</div>
+<div id="printBut" class="hideonprint">Print</div>
+<div class="footer hideonprint">
+	<a href="https://github.com/bbreukelen/paperwallet" target="_blank">Download on GitHub</a>
+</div>
+<div class="help">
+	<h3>Paper Wallet for all Crypto Coins</h3>
+	This tool helps you to quickly create a nicely formatted paper wallet with auto-generated QR-codes.<br/>
+	<ul>
+		<li>Disconnect your computer from the internet</li>
+		<li>Generate your public and private addresses on another website or with another tool</li>
+		<li>Enter the name of the cryptocoin in the top-left field</li>
+		<li>Enter the public information in the left side.<br/>
+				You can enter 1 or 2 public strings and specify the name of that key.<br/>
+				Usually the title will be "Address" and you can enter the public address in the field below.<br/>
+				A QR-code is auto-created.</li>
+		<li>Enter the private information on the right side.<br/>
+				Enter the type of key name like: "Private Key" and the actual key below that.<br/>
+				You can enter 3 different keys/secrets/etc.</li>
+		<li>Click the print link at the top-left to auto-remove unused fields and print on an A4/US letter in landscape.</li>
+		<li>Cut away the parts you don't need and fold the private key over the middle section</li>
+	</ul>
+	<br/>
+	<center><a href="javascript:closeHelp();">Ok, got it</a></center>
+</div>
 </body>
 </html>

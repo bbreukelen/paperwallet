@@ -2,12 +2,15 @@ var qrSize = 150,
   qrColor = "#000000",
   qrCorrLevel = QRCode.CorrectLevel.Q;
 
+
+function closeHelp() {
+	$(".help").hide();
+}
+
 function autosize(){
   var el = this;
   setTimeout(function(){
     el.style.cssText = 'height:1em; padding:0';
-    // for box-sizing other than "content-box" use:
-    // el.style.cssText = '-moz-box-sizing:content-box';
     el.style.cssText = 'height:' + el.scrollHeight + 'px';
   },0);
 }
@@ -36,7 +39,7 @@ function makeQR() {
 }
 
 function printPage() {
-  $("#printBut").hide();
+  $(".hideonprint").hide();
   $("input, textarea").each(function(nr, el) {
     el = $(el);
     if (el.val() === "") { el.hide(); }
@@ -44,7 +47,7 @@ function printPage() {
   window.print();
 
   setTimeout(function() {
-    $("#printBut, input, textarea").show();
+    $(".hideonprint, input, textarea").show();
   }, 0);
 }
 
